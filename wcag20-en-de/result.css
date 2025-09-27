@@ -1,0 +1,283 @@
+/* TODO consider migrating these styles common with style.css to a third one spanning across submit and result page. */
+
+/* Standard Button Styles */
+.btn {
+    color: #333;
+    background-color: #f0f0f0;
+    font-weight: 500;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 10px 16px;
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+	user-select: none;
+}
+
+/* Might become useful later */
+.btn:hover:not(:disabled) {
+    background-color: #e0e0e0;
+    border-color: #ccc;
+}
+/* Might become useful later */
+.btn:disabled {
+    background-color: #a0aec0;
+    cursor: not-allowed;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #f7fafc;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    width: 80%; /* Adjusted for a wider view */
+    max-width: 1200px; /* Max width for large screens */
+    margin: 2rem auto; /* Centered horizontally */
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.header .result-page-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.header h2 {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #666;
+    margin-top: 0;
+}
+
+.warning {
+	background-color: #fff3cd;
+	color: #856404;
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid #ffeeba;
+	border-radius: 4px;
+}
+
+details {
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 15px;
+	margin-bottom: 15px;
+}
+
+summary {
+	cursor: pointer;
+	font-weight: bold;
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1.1em;
+}
+
+.pElement {
+	margin: 10px 0;
+	line-height: 1.6;
+}
+
+.titleElement {
+	font-weight: bold;
+}
+
+.notFirstInContextTitle {
+    font-size: 1rem;
+}
+
+.original-text {
+	color: #777;
+	font-style: italic;
+	display: none; /* Hidden by default */
+}
+
+.original-text-summary {
+    color: #777;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 0.9em;
+}
+
+.readonly {
+	background-color: #f5f5f5;
+	padding: 5px;
+	border-left: 3px solid #ccc;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.uncategorized-inline-element {
+    background-color: #e0f2fe; /* Light blue */
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+.uncategorized-inline-element[data-tagname]::before {
+    content: attr(data-tagname);
+    font-family: monospace;
+}
+
+.uncategorized-inline-element[keyref] {
+	background-color: #ceffd0aa; /* Light green */
+}
+
+.uncategorized-inline-element[keyref]::before {
+    content: attr(keyref);
+    font-family: monospace;
+}
+
+.uncategorized-inline-element:not(:empty)::before {
+	margin-right: 0.5em;
+}
+
+.readonly-inline {
+	background-color: #f5f5f5;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
+/* Sidebar and Hamburger Styles */
+.hamburger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    width: 30px;
+    height: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.hamburger-line {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    transform-origin: center;
+}
+
+.hamburger.open .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.sidebar {
+    position: fixed;
+    top: 80px; /* Below hamburger */
+    right: 0;
+    min-width: 240px;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    border-radius: 6px 0 0 6px;
+    padding: 30px 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar .btn {
+    margin-right: 0;
+    width: 100%;
+}
+
+/* Legend Styles */
+.legend {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.legend h4 {
+    margin: 0 0 10px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.legend ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.legend li {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.legend-color {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.bg-readonly { background-color: #f5f5f5; border: 1px solid #ddd; }
+.bg-keyword { background-color: #ceffd0aa; }
+.bg-other-element { background-color: #e0f2fe; }
+
+@media (max-width: 400px) {
+    .sidebar {
+        width: 90%;
+        min-width: 0;
+        border-radius: 8px;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .sidebar.open {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
