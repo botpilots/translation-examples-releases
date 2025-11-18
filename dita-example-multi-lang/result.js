@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 			toggleOriginalsBtn.textContent = originalsVisible ? 'Hide Original Text' : 'Show Original Text';
 		});
+		toggleOriginalsBtn.click();
 	}
 
 	let allExpanded = false; // Assume most are collapsed by default

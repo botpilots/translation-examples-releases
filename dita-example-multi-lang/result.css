@@ -102,6 +102,12 @@ summary {
     font-size: 1rem;
 }
 
+.not-first-title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
 .original-text {
 	color: #777;
 	font-style: italic;
