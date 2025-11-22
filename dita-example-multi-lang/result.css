@@ -106,6 +106,7 @@ summary {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+	gap: 20px;
 }
 
 .original-text {
@@ -294,6 +295,27 @@ h1, h2, h3, h4, h5, h6 {
 .bg-readonly { background-color: #f5f5f5; border: 1px solid #ddd; }
 .bg-keyword { background-color: #ceffd0aa; }
 .bg-other-element { background-color: #e0f2fe; }
+
+.image-placeholder {
+    width: 250px;
+    height: 250px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    word-break: break-all;
+    margin: 20px auto;
+}
+
+.image-placeholder img {
+    max-width: 60%;
+    max-height: 60%;
+    margin-bottom: 5px;
+}
 
 .readonly::before, .readonly-inline::before {
     content: "Read-only content: ";
